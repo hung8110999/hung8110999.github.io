@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub — Hung's Blog</title>
+    <meta name="description"
+        content="Explore my study areas — Math, English, and Coding. Notes, resources, and progress tracking.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">H</span>
+                Hung
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">🏠 Profile</a></li>
+                <li><a href="road.html">🛤️ My Road</a></li>
+                <li class="nav-dropdown">
+                    <a href="study.html">📚 Study ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="math.html">📐 Math</a>
+                        <a href="english.html">📝 English</a>
+                        <a href="coding.html">💻 Coding</a>
+                    </div>
+                </li>
+                <li><a href="projects.html">🔨 Projects <span class="coming-soon">Soon</span></a></li>
+                <li><a href="blog.html">✍️ Blog <span class="coming-soon">Soon</span></a></li>
+                <li><a href="resources.html">📦 Resources <span class="coming-soon">Soon</span></a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <!-- Header -->
+        <div class="content-header">
+            <div class="page-icon">📚</div>
+            <h1>Study Hub</h1>
+            <p>My central hub for all study subjects. Pick a topic and start exploring!</p>
+        </div>
+
+        <!-- Stats -->
+        <section class="section" style="padding-top: 0;">
+            <div class="section-container">
+                <div class="stats-grid">
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Active Subjects</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-number">📈</div>
+                        <div class="stat-label">Growing Daily</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-number">🎯</div>
+                        <div class="stat-label">Focused Learning</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Cards -->
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">✦ Study Tracks</div>
+                    <h2 class="section-title">Choose Your Subject</h2>
+                    <p class="section-subtitle">Each track contains study notes, resources, and progress tracking.</p>
+                </div>
+
+                <div class="cards-grid">
+                    <a href="math.html" class="card study-card animate-on-scroll" style="text-decoration:none;">
+                        <div class="card-icon">📐</div>
+                        <h3 class="card-title">Mathematics</h3>
+                        <p class="card-description">
+                            Building a solid math foundation — from Algebra and Calculus to Linear Algebra and
+                            Statistics.
+                            Includes solved examples and concept explanations.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <span class="card-link">Open Math Notes →</span>
+                    </a>
+
+                    <a href="english.html" class="card study-card animate-on-scroll" style="text-decoration:none;">
+                        <div class="card-icon">📝</div>
+                        <h3 class="card-title">English</h3>
+                        <p class="card-description">
+                            Improving English skills — Grammar rules, vocabulary building, reading comprehension,
+                            writing practice, and communication strategies.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <span class="card-link">Open English Notes →</span>
+                    </a>
+
+                    <a href="coding.html" class="card study-card animate-on-scroll" style="text-decoration:none;">
+                        <div class="card-icon">💻</div>
+                        <h3 class="card-title">Coding</h3>
+                        <p class="card-description">
+                            Learning to code — Python, JavaScript, Data Structures & Algorithms, and hands-on projects.
+                            From beginner concepts to advanced implementations.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 55%"></div>
+                        </div>
+                        <span class="card-link">Open Coding Notes →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Tips -->
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">✦ How I Study</div>
+                    <h2 class="section-title">My Study Method</h2>
+                </div>
+                <div class="cards-grid">
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Active Recall</h3>
+                        <p class="card-description">Testing myself on concepts rather than passively re-reading. This
+                            forces deeper understanding.</p>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Spaced Repetition</h3>
+                        <p class="card-description">Reviewing material at increasing intervals to move knowledge into
+                            long-term memory.</p>
+                    </div>
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">📝</div>
+                        <h3 class="card-title">Teach to Learn</h3>
+                        <p class="card-description">Writing notes as if teaching someone else. If I can explain it
+                            simply, I truly understand it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Hung — Built with 💙 for self-study. Hosted on <a href="https://pages.github.com"
+                target="_blank">GitHub Pages</a>.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
