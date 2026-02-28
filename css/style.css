@@ -497,10 +497,10 @@ h6 {
 .topic-tags {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: var(--space-md);
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 .topic-tag-wrapper {
@@ -509,61 +509,88 @@ h6 {
 }
 
 .topic-tag {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-md);
-  border-radius: var(--radius-full);
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-lg);
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: 700;
+  text-align: center;
+  padding: var(--space-md);
   cursor: pointer;
   border: 1px solid transparent;
   transition: all var(--transition-fast);
   user-select: none;
+  gap: var(--space-sm);
 }
 
 .topic-tag::after {
   content: '▾';
-  font-size: 0.8em;
+  font-size: 1.2em;
   transition: transform var(--transition-fast);
+  margin-top: auto;
 }
 
 .topic-tag.active::after {
   transform: rotate(180deg);
 }
 
-/* Colors for specific tags */
-.tag-linear {
-  background: #eef2ff;
-  color: #4f46e5;
-  border-color: #c7d2fe;
+/* 1. Algebra */
+.bg-algebra {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
 }
 
-.tag-linear:hover,
-.tag-linear.active {
-  background: #e0e7ff;
+.bg-algebra:hover {
+  background: #fca5a5;
 }
 
-.tag-calculus {
+/* 2. Calculus */
+.bg-calculus {
   background: #f0fdf4;
-  color: #16a34a;
+  color: #15803d;
   border-color: #bbf7d0;
 }
 
-.tag-calculus:hover,
-.tag-calculus.active {
-  background: #dcfce7;
+.bg-calculus:hover {
+  background: #86efac;
 }
 
-.tag-stats {
+/* 3. Linear Algebra */
+.bg-linear {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.bg-linear:hover {
+  background: #7dd3fc;
+}
+
+/* 4. Statistics */
+.bg-stats {
   background: #fff7ed;
-  color: #ea580c;
+  color: #c2410c;
   border-color: #ffedd5;
 }
 
-.tag-stats:hover,
-.tag-stats.active {
-  background: #ffedd5;
+.bg-stats:hover {
+  background: #fed7aa;
+}
+
+/* 5. Discrete Math */
+.bg-discrete {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border-color: #e9d5ff;
+}
+
+.bg-discrete:hover {
+  background: #d8b4fe;
 }
 
 /* Tag Explanation Dropdown */
@@ -586,8 +613,27 @@ h6 {
   line-height: 1.6;
 }
 
-.topic-tag-wrapper.open .tag-explanation {
+.topic-tag-wrapper:hover .tag-explanation {
   display: block;
+}
+
+/* Post Tags */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.post-tag {
+  display: inline-flex;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
 }
 
 /* ---------- Section ---------- */
