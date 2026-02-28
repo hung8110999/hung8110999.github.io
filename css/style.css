@@ -402,10 +402,12 @@ h6 {
 }
 
 .news-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg) var(--space-xl);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.news-item:last-child {
+  border-bottom: none;
 }
 
 .news-item .news-date {
