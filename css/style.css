@@ -1176,36 +1176,68 @@ pre code {
 }
 
 .timeline-landmark {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  /* space between marker and card is handled by padding/margin on children */
   margin-bottom: var(--space-sm);
+  margin-left: 40px; /* leave room for connector line */
+}
+
+.timeline-landmark::before {
+  /* connecting line from landmark back to central vertical timeline */
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--blue-200);
 }
 
 .timeline-logo {
-  width: 40px;
-  height: 40px;
+  width: 16px;
+  height: 16px;
   border-radius: var(--radius-sm);
   background: white;
   border: 1px solid var(--border-light);
-  padding: 4px;
+  padding: 2px;
   object-fit: contain;
   box-shadow: var(--shadow-sm);
+  /* exactly the same dimension as the dot marker */
 }
 
 .timeline-date {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
   font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--blue-600);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: relative;
 }
 
 .timeline-card {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
+  margin-left: 40px; /* keep card aligned with landmark text */
+}
+
+.timeline-card::before {
+  /* small connector from card body back to timeline */
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 20px;
+  width: 40px;
+  height: 2px;
+  background: var(--blue-200);
 }
 
 .timeline-card h3 {
