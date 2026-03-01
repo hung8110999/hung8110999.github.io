@@ -593,6 +593,47 @@ h6 {
   background: #d8b4fe;
 }
 
+/* English Tags */
+.bg-reading {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.bg-reading:hover {
+  background: #86efac;
+}
+
+.bg-writing {
+  background: #fff7ed;
+  color: #c2410c;
+  border-color: #ffedd5;
+}
+
+.bg-writing:hover {
+  background: #fed7aa;
+}
+
+.bg-speaking {
+  background: #fdf2f8;
+  color: #be185d;
+  border-color: #fbcfe8;
+}
+
+.bg-speaking:hover {
+  background: #f472b6;
+}
+
+.bg-listening {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.bg-listening:hover {
+  background: #93c5fd;
+}
+
 /* Tag Explanation Dropdown */
 .tag-explanation {
   display: none;
