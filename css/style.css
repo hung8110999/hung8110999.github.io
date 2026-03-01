@@ -1234,10 +1234,17 @@ pre code {
   background: var(--blue-200);
 }
 
-.timeline-logo-outside {
-  margin: var(--space-sm) 0 var(--space-lg) 32px;
+.timeline-content-wrapper {
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-left: 32px; /* keep same left offset as before */
+  flex-wrap: wrap; /* allow logo to drop below on narrow screens */
+}
+
+.timeline-logo-outside {
+  /* no margin above, will be vertically centered by wrapper */
+  flex-shrink: 0;
 }
 
 .timeline-logo-outside img {
