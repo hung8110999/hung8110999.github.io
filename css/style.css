@@ -594,6 +594,26 @@ h6 {
 }
 
 /* English Tags */
+.bg-grammar {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.bg-grammar:hover {
+  background: #7dd3fc;
+}
+
+.bg-vocab {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border-color: #e9d5ff;
+}
+
+.bg-vocab:hover {
+  background: #d8b4fe;
+}
+
 .bg-reading {
   background: #f0fdf4;
   color: #15803d;
@@ -632,6 +652,47 @@ h6 {
 
 .bg-listening:hover {
   background: #93c5fd;
+}
+
+/* Coding Tags */
+.bg-algo {
+  background: #fef08a;
+  color: #854d0e;
+  border-color: #fde047;
+}
+
+.bg-algo:hover {
+  background: #fde047;
+}
+
+.bg-web {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.bg-web:hover {
+  background: #7dd3fc;
+}
+
+.bg-ai {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.bg-ai:hover {
+  background: #86efac;
+}
+
+.bg-sys {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #e5e7eb;
+}
+
+.bg-sys:hover {
+  background: #d1d5db;
 }
 
 /* Tag Explanation Dropdown */
@@ -967,6 +1028,93 @@ h6 {
   gap: var(--space-md);
   margin-bottom: var(--space-2xl);
 }
+
+/* ---------- Code Snippets & Syntax ---------- */
+pre {
+  background-color: #f8fafc;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: var(--fs-sm);
+  color: #334155;
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+code {
+  font-family: 'Consolas', 'Monaco', monospace;
+  background-color: #f1f5f9;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #be123c;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* ---------- Repository Cards ---------- */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.repo-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--blue-400);
+}
+
+.repo-name {
+  font-weight: 600;
+  color: var(--blue-600);
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.repo-desc {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+  line-height: 1.4;
+}
+
+.repo-meta {
+  display: flex;
+  gap: var(--space-md);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.repo-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ---------- End Code Repos ---------- */
 
 .stat-card {
   background: var(--bg-card);
