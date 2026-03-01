@@ -45,3 +45,24 @@ function initTopicToggles() {
     });
   });
 }
+
+// ---------- Timeline helper ----------
+function alignTimelineDots() {
+  document.querySelectorAll('.timeline-item').forEach(item => {
+    const dot = item.querySelector('.timeline-dot');
+    const card = item.querySelector('.timeline-card');
+    if (dot && card) {
+      // compute offset relative to item
+      const offset = card.offsetTop + card.offsetHeight / 2 - dot.offsetHeight / 2;
+      dot.style.top = offset + 'px';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  initTopicToggles();
+  alignTimelineDots();
+});
+
+window.addEventListener('resize', alignTimelineDots);

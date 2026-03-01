@@ -1150,7 +1150,7 @@ pre code {
   content: '';
   position: absolute;
   top: 0;
-  left: 19px; /* center of 2px line at 20px */
+  left: 20px; /* center axis at 20px from container left */
   width: 2px;
   height: 100%;
   background: var(--blue-200);
@@ -1168,8 +1168,8 @@ pre code {
   border: 3px solid var(--blue-500);
   border-radius: 50%;
   position: absolute;
-  left: 12px; /* dot center at 20px aligns with line */
-  top: 6px;
+  left: 9px; /* center of dot aligned with axis at 20px */
+  /* vertical position set dynamically via script */
 }
 
 .timeline-landmark {
@@ -1177,16 +1177,16 @@ pre code {
   display: flex;
   align-items: center;
   margin-bottom: var(--space-sm);
-  margin-left: 32px; /* reduced spacing from axis */
+  margin-left: 32px; /* spacing from axis */
 }
 
 .timeline-landmark::before {
   content: '';
   position: absolute;
-  left: -32px;
+  left: -12px; /* 32px margin minus 20px axis = 12px connector */
   top: 50%;
   transform: translateY(-50%);
-  width: 32px;
+  width: 12px;
   height: 2px;
   background: var(--blue-200);
 }
@@ -1220,27 +1220,29 @@ pre code {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  /* add extra right padding so text doesn't flow under logo */
-  padding: var(--space-lg) calc(var(--space-lg) + 48px) var(--space-lg) var(--space-lg);
+  padding: var(--space-lg); /* no extra padding now that logo moved outside */
   margin-left: 32px; /* reduce gap from the timeline */
 }
 
 .timeline-card::before {
   content: '';
   position: absolute;
-  left: -32px;
+  left: -12px; /* 32px margin minus 20px axis */
   top: 20px;
-  width: 32px;
+  width: 12px;
   height: 2px;
   background: var(--blue-200);
 }
 
-.timeline-card-logo {
-  position: absolute;
-  top: var(--space-lg);
-  right: var(--space-lg);
-  width: 40px;
-  height: 40px;
+.timeline-logo-outside {
+  margin: var(--space-sm) 0 var(--space-lg) 32px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.timeline-logo-outside img {
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   border-radius: var(--radius-sm);
   background: white;
@@ -1248,6 +1250,8 @@ pre code {
   padding: 4px;
   box-shadow: var(--shadow-sm);
 }
+
+/* card‑logo moved outside; old class removed */
 
 .timeline-card h3 {
   font-size: var(--fs-base);
