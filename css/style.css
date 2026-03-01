@@ -1162,14 +1162,29 @@ pre code {
 }
 
 .timeline-dot {
-  position: absolute;
-  left: calc(-1 * var(--space-2xl) + 5px);
-  top: 8px;
   width: 16px;
   height: 16px;
-  background: var(--blue-500);
-  border: 3px solid var(--bg-primary);
+  background: white;
+  border: 3px solid var(--blue-500);
   border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  top: 6px;
+}
+
+.timeline-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: white;
+  border: 1px solid var(--border-light);
+  padding: 4px;
+  position: absolute;
+  left: -24px;
+  top: 0;
+  object-fit: contain;
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
 }
 
 .timeline-date {
