@@ -1143,16 +1143,14 @@ pre code {
   position: relative;
   max-width: 700px;
   margin: 0 auto;
-  padding-left: var(--space-2xl);
-  /* Adjusted padding after moving logos */
+  padding-left: 0; /* left spacing now driven by individual items */
 }
 
 .timeline::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 20px;
-  /* Shifted line right */
+  left: 19px; /* center of 2px line at 20px */
   width: 2px;
   height: 100%;
   background: var(--blue-200);
@@ -1170,8 +1168,7 @@ pre code {
   border: 3px solid var(--blue-500);
   border-radius: 50%;
   position: absolute;
-  left: 13px;
-  /* Shifted dot right */
+  left: 12px; /* dot center at 20px aligns with line */
   top: 6px;
 }
 
@@ -1179,19 +1176,17 @@ pre code {
   position: relative;
   display: flex;
   align-items: center;
-  /* space between marker and card is handled by padding/margin on children */
   margin-bottom: var(--space-sm);
-  margin-left: 40px; /* leave room for connector line */
+  margin-left: 32px; /* reduced spacing from axis */
 }
 
 .timeline-landmark::before {
-  /* connecting line from landmark back to central vertical timeline */
   content: '';
   position: absolute;
-  left: -40px;
+  left: -32px;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
+  width: 32px;
   height: 2px;
   background: var(--blue-200);
 }
@@ -1225,19 +1220,33 @@ pre code {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  margin-left: 40px; /* keep card aligned with landmark text */
+  /* add extra right padding so text doesn't flow under logo */
+  padding: var(--space-lg) calc(var(--space-lg) + 48px) var(--space-lg) var(--space-lg);
+  margin-left: 32px; /* reduce gap from the timeline */
 }
 
 .timeline-card::before {
-  /* small connector from card body back to timeline */
   content: '';
   position: absolute;
-  left: -40px;
+  left: -32px;
   top: 20px;
-  width: 40px;
+  width: 32px;
   height: 2px;
   background: var(--blue-200);
+}
+
+.timeline-card-logo {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: white;
+  border: 1px solid var(--border-light);
+  padding: 4px;
+  box-shadow: var(--shadow-sm);
 }
 
 .timeline-card h3 {
