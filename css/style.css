@@ -1151,8 +1151,8 @@ pre code {
   content: '';
   position: absolute;
   top: 0;
-  left: 20px;
-  /* center axis at 20px from container left */
+  left: 32px;
+  /* Align axis with the start of cards */
   width: 2px;
   height: 100%;
   background: var(--blue-200);
@@ -1170,9 +1170,9 @@ pre code {
   border: 3px solid var(--blue-500);
   border-radius: 50%;
   position: absolute;
-  left: 9px;
-  /* center of dot aligned with axis at 20px */
-  /* vertical position set dynamically via script */
+  left: 25px;
+  /* Alignment fix: (left 32px - radius 8px + half axis 1px) = 25px */
+  z-index: 10;
 }
 
 .timeline-landmark {
@@ -1187,11 +1187,11 @@ pre code {
 .timeline-landmark::before {
   content: '';
   position: absolute;
-  left: -12px;
-  /* 32px margin minus 20px axis = 12px connector */
+  left: 0;
+  /* Connector starts exactly from axis */
   top: 50%;
   transform: translateY(-50%);
-  width: 12px;
+  width: 20px;
   height: 2px;
   background: var(--blue-200);
 }
@@ -1225,19 +1225,23 @@ pre code {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  /* no extra padding now that logo moved outside */
-  margin-left: 32px;
-  /* reduce gap from the timeline */
+  padding: var(--space-xl);
+  /* Increased padding */
+  margin-left: 52px;
+  /* Spacing from axis */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xl);
 }
 
 .timeline-card::before {
   content: '';
   position: absolute;
-  left: -12px;
-  /* 32px margin minus 20px axis */
-  top: 20px;
-  width: 12px;
+  left: -20px;
+  /* Connect from the axis */
+  top: 30px;
+  width: 20px;
   height: 2px;
   background: var(--blue-200);
 }
@@ -1253,19 +1257,26 @@ pre code {
 }
 
 .timeline-logo-outside {
-  /* no margin above, will be vertically centered by wrapper */
   flex-shrink: 0;
+  order: 2;
+  /* Ensure logo is on the right */
 }
 
 .timeline-logo-outside img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  /* Much larger size as requested */
+  height: 100px;
   object-fit: contain;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-lg);
   background: white;
   border: 1px solid var(--border-light);
-  padding: 4px;
-  box-shadow: var(--shadow-sm);
+  padding: 8px;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base);
+}
+
+.timeline-logo-outside img:hover {
+  transform: scale(1.1);
 }
 
 /* card‑logo moved outside; old class removed */
