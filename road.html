@@ -4,17 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Road — Nguyen Gia Hung</title>
+    <title>My Road — Nguyen Gia Hung (fixed)</title>
     <meta name="description"
         content="Academic and career timeline of Nguyen Gia Hung, AI engineer and lifelong learner.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <!-- Overrides / fixes for timeline connectors and logo sizing -->
+    <style>
+        :root {
+            --timeline-left: 56px;
+            /* x position of center line */
+            --timeline-line-color: rgba(100, 100, 120, 0.12);
+            --accent: #3b82f6;
+            --muted: #d7dce6;
+        }
+
+        /* Make sure the timeline area is relative so pseudo elements can be positioned */
+        .timeline {
+            position: relative;
+            padding-left: 12px;
+            margin-left: 0;
+        }
+
+        /* vertical timeline line (single source of truth) */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: var(--timeline-left);
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--timeline-line-color);
+            border-radius: 2px;
+            z-index: 0;
+        }
+
+        /* each item uses grid so dot, date, content align perfectly */
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: min-content 180px 1fr;
+            column-gap: 18px;
+            align-items: center;
+            /* keep dot vertically centered with the card */
+            padding: 18px 0;
+            z-index: 1;
+            /* above the vertical line */
+        }
+
+        /* place the dot exactly on the vertical line */
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.08);
+            margin-left: calc(var(--timeline-left) - 14px);
+            /* make sure dot sits above everything */
+            z-index: 3;
+            display: inline-block;
+        }
+
+        /* short connector from the vertical line to the content (keeps connectors consistent) */
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            left: calc(var(--timeline-left) + 10px);
+            top: 50%;
+            transform: translateY(-50%);
+            height: 2px;
+            width: 24px;
+            /* short, consistent connector */
+            background: var(--muted);
+            z-index: 1;
+        }
+
+        /* date / landmark column */
+        .timeline-landmark {
+            position: relative;
+            padding-left: 6px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        /* content wrapper holds the card and the logo (logo to the right) */
+        .timeline-content-wrapper {
+            display: flex;
+            gap: 12px;
+            align-items: stretch;
+            /* IMPORTANT: makes card and logo the same height */
+        }
+
+        .timeline-card {
+            flex: 1 1 auto;
+            padding: 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 6px 18px rgba(20, 24, 40, 0.04);
+            min-width: 0;
+        }
+
+        /* logo container — will match the card height because of align-items: stretch */
+        .timeline-logo-outside {
+            width: 140px;
+            /* reasonable fixed width so logos don't dominate; change if you want */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            padding: 6px;
+        }
+
+        /* logo image will stretch to the full height of the card */
+        .timeline-logo-outside img {
+            height: 100%;
+            /* match the card's height */
+            width: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* responsive: stack card + logo on small screens */
+        @media (max-width: 880px) {
+            .timeline-item {
+                grid-template-columns: 40px 1fr;
+                /* hide the separate date column */
+                row-gap: 8px;
+            }
+
+            .timeline-landmark {
+                grid-column: 2 / span 1;
+            }
+
+            .timeline-content-wrapper {
+                flex-direction: column-reverse;
+            }
+
+            .timeline-logo-outside {
+                width: 100%;
+                padding: 8px 6px;
+            }
+
+            .timeline-logo-outside img {
+                height: 56px;
+            }
+
+            /* keep logos small on mobile */
+            .timeline-dot {
+                margin-left: calc(var(--timeline-left) - 14px);
+            }
+
+            .timeline-dot::after {
+                width: 16px;
+            }
+        }
+
+        /* small polish to ensure images inside uni-logo-small behave well */
+        .uni-logo-small img {
+            height: 32px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Navigation (unchanged) -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -81,6 +242,7 @@
                         <p style="margin-top: 10px; font-size: 0.85em; color: var(--text-secondary);">Target
                             Institutions: ETH Zurich, Berlin University of Technology, or HKUST.</p>
                     </div>
+                    <!-- no logo for the top item (optional) -->
                 </div>
             </div>
 
@@ -96,6 +258,9 @@
                         <h4>Digital Twin in Urban Area</h4>
                         <p>Developing digital twin solutions for smart cities, integrating sensor data, spatial models,
                             and machine learning to simulate and optimise urban environments.</p>
+                    </div>
+                    <div class="timeline-logo-outside">
+                        <img src="assets/your_company_logo.png" alt="Company Logo">
                     </div>
                 </div>
             </div>
