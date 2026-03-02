@@ -1143,14 +1143,16 @@ pre code {
   position: relative;
   max-width: 700px;
   margin: 0 auto;
-  padding-left: 0; /* left spacing now driven by individual items */
+  padding-left: 0;
+  /* left spacing now driven by individual items */
 }
 
 .timeline::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 20px; /* center axis at 20px from container left */
+  left: 20px;
+  /* center axis at 20px from container left */
   width: 2px;
   height: 100%;
   background: var(--blue-200);
@@ -1168,7 +1170,8 @@ pre code {
   border: 3px solid var(--blue-500);
   border-radius: 50%;
   position: absolute;
-  left: 9px; /* center of dot aligned with axis at 20px */
+  left: 9px;
+  /* center of dot aligned with axis at 20px */
   /* vertical position set dynamically via script */
 }
 
@@ -1177,13 +1180,15 @@ pre code {
   display: flex;
   align-items: center;
   margin-bottom: var(--space-sm);
-  margin-left: 32px; /* spacing from axis */
+  margin-left: 32px;
+  /* spacing from axis */
 }
 
 .timeline-landmark::before {
   content: '';
   position: absolute;
-  left: -12px; /* 32px margin minus 20px axis = 12px connector */
+  left: -12px;
+  /* 32px margin minus 20px axis = 12px connector */
   top: 50%;
   transform: translateY(-50%);
   width: 12px;
@@ -1220,14 +1225,17 @@ pre code {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg); /* no extra padding now that logo moved outside */
-  margin-left: 32px; /* reduce gap from the timeline */
+  padding: var(--space-lg);
+  /* no extra padding now that logo moved outside */
+  margin-left: 32px;
+  /* reduce gap from the timeline */
 }
 
 .timeline-card::before {
   content: '';
   position: absolute;
-  left: -12px; /* 32px margin minus 20px axis */
+  left: -12px;
+  /* 32px margin minus 20px axis */
   top: 20px;
   width: 12px;
   height: 2px;
@@ -1238,8 +1246,10 @@ pre code {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
-  margin-left: 32px; /* keep same left offset as before */
-  flex-wrap: wrap; /* allow logo to drop below on narrow screens */
+  margin-left: 32px;
+  /* keep same left offset as before */
+  flex-wrap: wrap;
+  /* allow logo to drop below on narrow screens */
 }
 
 .timeline-logo-outside {
@@ -1462,3 +1472,104 @@ pre code {
     align-items: center;
   }
 }
+
+/* ---------- Premium Redesign: Glassmorphism & Animations ---------- */
+
+/* Scroll Reveal Effect */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glassmorphism Card */
+.glass {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+  transition: all var(--transition-base) !important;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.8) !important;
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.12) !important;
+  border-color: var(--blue-300) !important;
+}
+
+/* Enhanced Timeline Item */
+.timeline-item {
+  margin-bottom: var(--space-3xl) !important;
+}
+
+.timeline-dot {
+  background: var(--blue-500) !important;
+  box-shadow: 0 0 0 4px rgba(74, 158, 206, 0.2);
+}
+
+.timeline-landmark .timeline-date {
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--blue-700);
+}
+
+/* Target Universities Grid */
+.target-universities {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  align-items: center;
+}
+
+.uni-logo-small {
+  width: 45px;
+  height: 45px;
+  padding: 6px;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.uni-logo-small:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.uni-logo-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Page Icon Animation */
+.page-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* --------------------------------- */
