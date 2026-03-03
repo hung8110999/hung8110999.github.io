@@ -1231,7 +1231,18 @@ pre code {
 }
 
 .timeline-card::before {
-  display: none;
+  content: '';
+  position: absolute;
+  left: -51px;
+  /* reach from card edge back to dot center */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 51px;
+  height: 2px;
+  background: var(--blue-200);
+  display: block;
+  z-index: -1;
+  /* stay behind card content */
 }
 
 
