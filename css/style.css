@@ -1166,13 +1166,46 @@ pre code {
 .timeline-dot {
   width: 16px;
   height: 16px;
-  background: white;
-  border: 3px solid var(--blue-500);
+  background: var(--blue-500) !important;
+  border: 3px solid white;
   border-radius: 50%;
   position: absolute;
   left: 25px;
   /* Alignment fix: (left 32px - radius 8px + half axis 1px) = 25px */
   z-index: 10;
+  box-shadow: 0 0 0 4px rgba(74, 158, 206, 0.2);
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 33px;
+  /* centers with dot (25px + 8px radius) */
+  width: 51px;
+  /* reach to card (84px alignment - 33px) */
+  height: 2px;
+  background: var(--blue-500);
+  z-index: 1;
+  pointer-events: none;
+  /* do not interfere with card clicks */
+}
+
+/* Vertical centering refined (+36px based on browser inspection) */
+.timeline-item:nth-child(1)::after {
+  top: 156.5px;
+}
+
+.timeline-item:nth-child(2)::after {
+  top: 107px;
+}
+
+/* Specific vertical alignment for NTU/VNU items (+36.5px adjustment) */
+.timeline-item:nth-child(3)::after {
+  top: 133.5px;
+}
+
+.timeline-item:nth-child(4)::after {
+  top: 121.5px;
 }
 
 .timeline-landmark {
@@ -1229,22 +1262,6 @@ pre code {
   align-items: center;
   gap: var(--space-xl);
 }
-
-.timeline-card::before {
-  content: '';
-  position: absolute;
-  left: -51px;
-  /* reach from card edge back to dot center */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 51px;
-  height: 2px;
-  background: var(--blue-200);
-  display: block;
-  z-index: -1;
-  /* stay behind card content */
-}
-
 
 .timeline-content-wrapper {
   display: flex;
