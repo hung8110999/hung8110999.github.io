@@ -1180,7 +1180,8 @@ pre code {
   display: flex;
   align-items: center;
   margin-bottom: var(--space-sm);
-  margin-left: 64px; /* moved further right to clear the dot and previous connector */
+  margin-left: 84px;
+  /* shifted to align with cards (32px wrapper + 52px card margin) */
   /* spacing from axis, date now sits slightly to the right of the dot */
 }
 
@@ -1239,7 +1240,8 @@ pre code {
   align-items: center;
   gap: var(--space-lg);
   margin-left: 32px;
-  margin-top: var(--space-md); /* lower the whole card a bit so connector meets the dot */
+  margin-top: var(--space-md);
+  /* lower the whole card a bit so connector meets the dot */
   /* keep same left offset as before */
   flex-wrap: wrap;
   /* allow logo to drop below on narrow screens */
