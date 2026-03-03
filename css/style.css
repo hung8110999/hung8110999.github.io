@@ -1230,15 +1230,7 @@ pre code {
 }
 
 .timeline-card::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  /* Connect from the axis to the card at mid-height */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 2px;
-  background: var(--blue-200);
+  display: none;
 }
 
 
