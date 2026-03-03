@@ -1180,21 +1180,15 @@ pre code {
   display: flex;
   align-items: center;
   margin-bottom: var(--space-sm);
-  margin-left: 52px; /* align dates with card edge */
-  /* spacing from axis, date now sits directly above the description box */
+  margin-left: 64px; /* moved further right to clear the dot and previous connector */
+  /* spacing from axis, date now sits slightly to the right of the dot */
 }
 
+/* remove the tiny hyphen/line that used to link the date to the dot */
 .timeline-landmark::before {
-  content: '';
-  position: absolute;
-  left: -27px; /* start at dot center instead of axis */
-  /* Connector now runs from the dot to the date text */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 27px; /* length equals distance between dot and card left edge */
-  height: 2px;
-  background: var(--blue-200);
+  display: none;
 }
+
 
 .timeline-logo {
   width: 16px;
@@ -1239,18 +1233,21 @@ pre code {
   content: '';
   position: absolute;
   left: -20px;
-  /* Connect from the axis */
-  top: 30px;
+  /* Connect from the axis to the card at mid-height */
+  top: 50%;
+  transform: translateY(-50%);
   width: 20px;
   height: 2px;
   background: var(--blue-200);
 }
+
 
 .timeline-content-wrapper {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
   margin-left: 32px;
+  margin-top: var(--space-md); /* lower the whole card a bit so connector meets the dot */
   /* keep same left offset as before */
   flex-wrap: wrap;
   /* allow logo to drop below on narrow screens */
