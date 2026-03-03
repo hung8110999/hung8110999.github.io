@@ -1180,18 +1180,18 @@ pre code {
   display: flex;
   align-items: center;
   margin-bottom: var(--space-sm);
-  margin-left: 32px;
-  /* spacing from axis */
+  margin-left: 52px; /* align dates with card edge */
+  /* spacing from axis, date now sits directly above the description box */
 }
 
 .timeline-landmark::before {
   content: '';
   position: absolute;
-  left: 0;
-  /* Connector starts exactly from axis */
+  left: -27px; /* start at dot center instead of axis */
+  /* Connector now runs from the dot to the date text */
   top: 50%;
   transform: translateY(-50%);
-  width: 20px;
+  width: 27px; /* length equals distance between dot and card left edge */
   height: 2px;
   background: var(--blue-200);
 }
