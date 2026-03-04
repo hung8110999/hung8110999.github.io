@@ -1205,11 +1205,11 @@ pre code {
 
 /* Specific vertical alignment for NTU/VNU items (-1px nudge) */
 .timeline-item:nth-child(3)::after {
-  top: 134.5px;
+  top: 132.5px;
 }
 
 .timeline-item:nth-child(4)::after {
-  top: 122.5px;
+  top: 120.5px;
 }
 
 .timeline-landmark {
