@@ -1198,7 +1198,7 @@ pre code {
 
 /* ~20px shift up from 156.5px to center with dot */
 .timeline-item:nth-child(2)::after {
-  top: 107px;
+  top: 117px;
 }
 
 /* -1px nudge for perfect centering */
