@@ -1193,7 +1193,7 @@ pre code {
 
 /* Vertical centering refined (+ precision nudge) */
 .timeline-item:nth-child(1)::after {
-  top: 129.5px;
+  top: 128.5px;
 }
 
 /* ~20px shift up from 156.5px to center with dot */
@@ -1205,11 +1205,11 @@ pre code {
 
 /* Specific vertical alignment for NTU/VNU items (-1px nudge) */
 .timeline-item:nth-child(3)::after {
-  top: 105px;
+  top: 105.5px;
 }
 
 .timeline-item:nth-child(4)::after {
-  top: 119.5px;
+  top: 119.4px;
 }
 
 .timeline-landmark {
