@@ -1193,7 +1193,7 @@ pre code {
 
 /* Vertical centering refined (+ precision nudge) */
 .timeline-item:nth-child(1)::after {
-  top: 115.5px;
+  top: 117.5px;
 }
 
 /* ~20px shift up from 156.5px to center with dot */
