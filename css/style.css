@@ -1189,27 +1189,8 @@ pre code {
   /* move behind cards to avoid overlap and handle hover correctly */
   pointer-events: none;
   /* do not interfere with card clicks */
-}
-
-/* Vertical centering refined (+ precision nudge) */
-.timeline-item:nth-child(1)::after {
-  top: 128.6px;
-}
-
-/* ~20px shift up from 156.5px to center with dot */
-.timeline-item:nth-child(2)::after {
-  top: 138px;
-}
-
-/* -1px nudge for perfect centering */
-
-/* Specific vertical alignment for NTU/VNU items (-1px nudge) */
-.timeline-item:nth-child(3)::after {
-  top: 105.5px;
-}
-
-.timeline-item:nth-child(4)::after {
-  top: 119.1px;
+  top: 7px;
+  /* Align to the center of the 16px timeline-dot (8px - 1px half-height) */
 }
 
 .timeline-landmark {
