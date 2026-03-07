@@ -1193,12 +1193,12 @@ pre code {
 
 /* Vertical centering refined (+ precision nudge) */
 .timeline-item:nth-child(1)::after {
-  top: 128.5px;
+  top: 129px;
 }
 
 /* ~20px shift up from 156.5px to center with dot */
 .timeline-item:nth-child(2)::after {
-  top: 136px;
+  top: 138px;
 }
 
 /* -1px nudge for perfect centering */
@@ -1209,7 +1209,7 @@ pre code {
 }
 
 .timeline-item:nth-child(4)::after {
-  top: 119.4px;
+  top: 119.1px;
 }
 
 .timeline-landmark {
